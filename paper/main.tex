@@ -1,0 +1,228 @@
+\documentclass[12pt,a4paper]{ctexart}
+\usepackage{geometry}
+\geometry{left=3.17cm,right=3.17cm,top=2.54cm,bottom=2.54cm}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{amsmath,amssymb}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black}
+\usepackage{titletoc}
+\usepackage[dvipsnames,svgnames,x11names]{xcolor}
+\usepackage{threeparttable}
+\usepackage{setspace}
+\usepackage{appendix}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+\xeCJKsetup{AutoFakeBold=true}
+\setCJKfamilyfont{zhsong}[AutoFakeBold=5.0]{STSong}
+
+\usepackage{caption}
+\DeclareCaptionLabelSeparator{twospaces}{\hspace{1em}} % 图/表序号与名称间两空格
+\captionsetup{
+  labelsep=twospaces,
+  justification=centering,
+  singlelinecheck=false
+}
+\captionsetup[table]{position=top, name=表}
+\captionsetup[figure]{position=bottom, name=图}
+\captionsetup[figure]{position=bottom, name=图}
+
+\usepackage{colortbl}
+\usepackage{dashrule}
+\usepackage{etoolbox}
+\AtBeginEnvironment{tabular}{\singlespacing}
+
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0pt}
+% 固定行距24磅（正文与标题统一）
+\AtBeginDocument{\fontsize{12pt}{24bp}\selectfont\setlength{\parindent}{2\ccwd}}
+
+% ─── 页码页眉样式设置──────────────────────────────
+\pagestyle{fancy}
+\fancyhf{} % 清除默认的页眉页脚设置
+
+\renewcommand{\headrulewidth}{0pt} % 去掉页眉那条横线
+\fancyhead[L]{\zihao{-5}\kaishu\textcolor{gray} \leftmark}
+\fancyfoot[C]{\zihao{5}\textcolor{gray}{\thepage}} % 核心修改：页脚中央灰色页码
+
+\ctexset{
+section={
+  format=\heiti\fontsize{15pt}{24pt}\selectfont\raggedright,
+  name={,、},
+  number=\chinese{section},
+  beforeskip=0pt,
+  afterskip=0pt
+},
+subsection={
+  format=\kaishu\fontsize{14pt}{24pt}\selectfont\raggedright,
+  name={（,）},
+  number=\chinese{subsection},
+  beforeskip=0pt,
+  afterskip=0pt
+},
+subsubsection={
+  format=\songti\bfseries\fontsize{12pt}{24pt}\selectfont\raggedright,
+  name={,\hspace{0.5em}},
+  number=\arabic{subsubsection}.,
+  beforeskip=0pt,
+  afterskip=0pt
+}
+}
+
+% ─── 目录样式 ──────────────────────────────────────────────
+\titlecontents{section}[0em]
+  {\addvspace{4pt}\songti\bfseries} % 宋体加粗
+  {\contentslabel{1.8em}}{}
+  {\titlerule*[0.5pc]{.}\contentspage}
+\titlecontents{subsection}[2em]
+  {\addvspace{1pt}\songti}         % 宋体
+  {\contentslabel{2.4em}}{}
+  {\titlerule*[0.5pc]{.}\contentspage}
+\titlecontents{subsubsection}[4.6em]
+  {\songti}                        % 宋体
+  {\contentslabel{3em}}{}
+  {\titlerule*[0.5pc]{.}\contentspage}
+
+% ─── 关键词命令 ────────────────────────────────────────────
+\newcommand{\keywords}[1]{%
+  \vspace{0.9em}%
+  \noindent{\bfseries 关键词：}#1\par%
+}
+
+\begin{document}
+
+
+% ════════════════════════════════════════════
+% ②  摘要 + 关键词
+% ════════════════════════════════════════════
+\clearpage
+\thispagestyle{empty}
+\vspace*{0.6cm}
+\begin{center}
+    {\songti\zihao{3} \textbf{中国碳达峰路径的驱动机制识别与多情景预测}}
+\end{center}
+\vspace{1.5em}
+\begin{center}
+{\centering\heiti\zihao{4} 摘要\par}
+\end{center}
+\vspace{0.6em}
+
+\setlength{\parindent}{2em}
+本文聚焦我国碳达峰目标实现过程中的关键驱动机制与未来路径预测问题，基于2005—2022年国家级观测数据与2023—2024年外推衔接数据，构建融合扩展STIRPAT、EKC检验、中介效应分析、多模型滚动预测与多情景模拟的综合分析框架。实证结果显示，受小样本自由度约束，扩展STIRPAT估计中仅煤炭占比在95\%置信水平下保持显著正向影响（弹性约3.3791）；人均GDP、能源强度等变量虽点估计多为正，但置信区间较宽且包含零。滚动一步预测比较表明，AR2 模型外推表现最稳健（RMSE=1323.36，MAPE=3.32\%）；而引入高维特征的多变量回归与复杂机器学习模型（XGBoost、随机森林）因样本量极小导致严重过拟合，误差急剧放大。多情景模拟显示，到2035年基准、低碳和深度脱碳情景下碳排放分别约为39127.33\,Mt、33013.06\,Mt和27766.48\,Mt。研究为国家层面优化减排路径、协同推进能源替代与产业升级提供量化依据。
+
+\keywords{碳达峰；STIRPAT模型；EKC假说；滚动预测；情景模拟}
+
+% ════════════════════════════════════════════
+% ③  目录
+% ════════════════════════════════════════════
+\clearpage
+\thispagestyle{empty}
+{\centering\heiti\zihao{4} 目录\par}
+\vspace{0.5em}
+\begingroup
+\renewcommand{\contentsname}{}
+\tableofcontents
+\endgroup
+\clearpage
+
+% ════════════════════════════════════════════
+% ④  表格与插图清单
+% ════════════════════════════════════════════
+\clearpage
+\thispagestyle{empty}
+{\centering\heiti\zihao{4} 表格与插图清单\par}
+\vspace{1em}
+
+\noindent{\songti\bfseries 表格目录}\par
+\vspace{0.5em}
+\noindent 表1\quad 扩展STIRPAT模型变量说明 \dotfill \pageref{tab:stirpat_vars}\par
+\noindent 表2\quad 扩展STIRPAT主要弹性系数估计结果 \dotfill \pageref{tab:stirpat_coeff}\par
+\noindent 表3\quad 主要模型预测误差比较 \dotfill \pageref{tab:model_perf}\par
+\noindent 表4\quad 多情景核心参数设定表 \dotfill \pageref{tab:scenario_params}\par
+\noindent 表5\quad 2035年不同情景碳排放预测结果 \dotfill \pageref{tab:scenario_2035}\par
+\noindent 表6\quad 样本描述性统计 \dotfill 附录\par
+
+\vspace{1.2em}
+\noindent{\songti\bfseries 插图目录}\par
+\vspace{0.5em}
+\noindent 图1\quad 2005—2024年中国碳排放总量变化趋势 \dotfill \pageref{fig:co2_trend}\par
+\noindent 图2\quad 2005—2024年GDP与碳排放双轴对比 \dotfill \pageref{fig:gdp_co2}\par
+\noindent 图3\quad 核心变量相关性矩阵热力图 \dotfill \pageref{fig:corr}\par
+\noindent 图4\quad 产业结构演化趋势图 \dotfill \pageref{fig:industry_structure}\par
+\noindent 图5\quad 能源总量与煤炭依赖三维联动图 \dotfill \pageref{fig:energy_structure}\par
+\noindent 图6\quad 城镇化率变化趋势 \dotfill \pageref{fig:urbanization_rate}\par
+\noindent 图7\quad EKC检验：人均GDP与碳排放关系 \dotfill \pageref{fig:ekc}\par
+\noindent 图8\quad 中介效应路径示意图 \dotfill \pageref{fig:mediation}\par
+\noindent 图9\quad 扩展STIRPAT关键弹性系数图 \dotfill \pageref{fig:stirpat}\par
+\noindent 图10\quad 技术创新能力三维轨迹图 \dotfill \pageref{fig:innovation_3d}\par
+\noindent 图11\quad 多模型滚动预测误差比较 \dotfill \pageref{fig:model_perf}\par
+\noindent 图12\quad 基于XGBoost模型的特征重要性SHAP分析 \dotfill \pageref{fig:shap}\par
+\noindent 图13\quad 不同情景下碳排放路径预测比较（2025—2035） \dotfill \pageref{fig:scenario_paths}\par
+\noindent 图14\quad 不同情景峰值年份与峰值规模三维比较 \dotfill \pageref{fig:peak_3d}\par
+\noindent 图15\quad 实际值与预测值对比图 \dotfill 附录\par
+\noindent 图16\quad 集成模型残差诊断图 \dotfill 附录\par
+\noindent 图17\quad 碳排放与GDP增速对比图 \dotfill 附录\par
+\noindent 图18\quad GDP、城镇化与碳排放三维响应图 \dotfill 附录\par
+\noindent 图19\quad 能源与结构特征雷达图 \dotfill 附录\par
+\noindent 图20\quad 2035年情景差异瀑布分解图 \dotfill 附录\par
+\noindent 图21\quad 滚动相关热力图 \dotfill 附录\par
+\clearpage
+
+
+% 正文页码从第1页重新编列
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+% 正文总标题（方正小标宋简体三号，居中）
+\begin{center}
+{\zihao{3}\CJKfamily{zhsong}\bfseries 中国碳达峰路径的驱动机制识别与多情景预测}
+\end{center}
+\vspace{0.5em}
+
+\input{sections/01_intro}
+\input{sections/02_literature}
+\input{sections/03_data}
+\input{sections/04_methods}
+\input{sections/05_results}
+\input{sections/06_discussion}
+\input{sections/07_conclusion}
+
+\bibliographystyle{plain}
+\begin{thebibliography}{99}
+\bibitem{zhou2016} 周志华. 机器学习[M]. 北京: 清华大学出版社, 2016.
+\bibitem{gaotiemei2016} 高铁梅. 计量经济分析方法与建模：EViews应用及实例（第3版）[M]. 北京: 清华大学出版社, 2016.
+\bibitem{york2003} York R, Rosa E A, Dietz T. STIRPAT, IPAT and ImPACT: Analytic tools for unpacking the driving forces of environmental impacts[J]. Ecological Economics, 2003, 46(3): 351-365.
+\bibitem{grossman1991} Grossman G M, Krueger A B. Environmental impacts of a North American free trade agreement[R]. Cambridge: NBER Working Paper No.3914, 1991.
+\bibitem{chen2016} Chen T, Guestrin C. XGBoost: A scalable tree boosting system[C]//Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining. New York: ACM, 2016: 785-794.
+\bibitem{lundberg2017} Lundberg S M, Lee S I. A unified approach to interpreting model predictions[C]//Advances in Neural Information Processing Systems 30. Red Hook: Curran Associates, 2017: 4765-4774.
+\bibitem{su2020} Su K, Lee C M. When will China achieve its carbon emission peak? A scenario analysis based on optimal control and the STIRPAT model[J]. Ecological Indicators, 2020, 112: 106138.
+\bibitem{zhang2019} Zhang Y L, Zhang Q Y, Pan B B. Impact of affluence and fossil energy on China carbon emissions using STIRPAT model[J]. Environmental Science and Pollution Research, 2019, 26(18): 18814-18824.
+\bibitem{jiang2017} Jiang J J, Ye B, Xie D J, et al. Provincial-level carbon emission drivers and emission reduction strategies in China: Combining multi-layer LMDI decomposition with hierarchical clustering[J]. Journal of Cleaner Production, 2017, 169: 178-190.
+\bibitem{dong2013} Dong F, Long R Y, Chen H, et al. Factors affecting regional per-capita carbon emissions in China based on an LMDI factor decomposition model[J]. PLoS ONE, 2013, 8(12): e80888.
+\bibitem{zhang2017} Zhang P Y, He J J, Hong X, et al. Regional-level carbon emissions modelling and scenario analysis: A STIRPAT case study in Henan Province, China[J]. Sustainability, 2017, 9(12): 2342.
+\bibitem{zhang2023energy} Zhang B L, Wang Q, Wang S X, et al. Coal power demand and paths to peak carbon emissions in China: A provincial scenario analysis oriented by CO2-related health co-benefits[J]. Energy, 2023, 282: 128830.
+\bibitem{sun2019} Sun Z R, Liu Y D, Yu Y N. China's carbon emission peak pre-2030: Exploring multi-scenario optimal low-carbon behaviors for China's regions[J]. Journal of Cleaner Production, 2019, 231: 963-979.
+\bibitem{feng2023} Feng D W, Xu W C, Gao X Y, et al. Carbon emission prediction and the reduction pathway in industrial parks: A scenario analysis based on the integration of the LEAP model with LMDI decomposition[J]. Energies, 2023, 16(21): 7356.
+\bibitem{lin2023} Lin Z R, Wang H, Li W, et al. Impact of green finance on carbon emissions based on a two-stage LMDI decomposition method[J]. Sustainability, 2023, 15(17): 12808.
+\bibitem{xu2023} Xu C F, Zhang Y, Yang Y M N, et al. Carbon peak scenario simulation of manufacturing carbon emissions in Northeast China: Perspective of structure optimization[J]. Energies, 2023, 16(13): 5227.
+\bibitem{pang2023} Pang G Q, Ding Z Q, Shen X Y. Spillover effect of energy intensity reduction targets on carbon emissions in China[J]. Frontiers in Environmental Science, 2023, 11: 1054272.
+\bibitem{jiang2021} Jiang Q Q, Khattak S I, Rahman Z U. Measuring the simultaneous effects of electricity consumption and production on carbon dioxide emissions (CO2e) in China: New evidence from an EKC-based assessment[J]. Energy, 2021, 229: 120616.
+\bibitem{tao2025} Tao M M, Lin B Q, Poletti S. Deciphering the impact of electric vehicles on carbon emissions: Some insights from an extended STIRPAT framework[J]. Energy, 2025, 316: 134473.
+\bibitem{niu2024} Niu H P, Chen S, Xiao D Y. Multi-scenario land cover changes and carbon emissions prediction for peak carbon emissions in the Yellow River Basin, China[J]. Ecological Indicators, 2024, 168: 112794.
+\bibitem{hou2024} Hou J, Yang S Y, Fan G L, et al. The impact of energy consumption on carbon emissions intensity in China: Evidence from a dynamic panel quantile regression model[J]. International Journal of Low-Carbon Technologies, 2024, 19: 268-288.
+\bibitem{naminse2018} Naminse E, Zhuang J C. Economic growth, energy intensity, and carbon dioxide emissions in China[J]. Polish Journal of Environmental Studies, 2018, 27(5): 2193-2201.
+\bibitem{liddle2015} Liddle B. What are the carbon emissions elasticities for income and population? Bridging STIRPAT and EKC via robust heterogeneous panel estimates[J]. Global Environmental Change, 2015, 31: 62-73.
+\bibitem{wooldridge2019} Wooldridge J M. Introductory econometrics: A modern approach[M]. 7th ed. Boston: Cengage, 2019.
+\end{thebibliography}
+
+\input{sections/08_appendix}
+
+
+\end{document}

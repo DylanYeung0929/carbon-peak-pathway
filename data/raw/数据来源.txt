@@ -1,0 +1,23 @@
+https://www.ceads.net.cn/data/nation/
+中国表观碳排放清单_1997_-_2022.xlsx
+中国分部门核算碳排放清单_1997_-_2022.xlsx
+
+
+https://www.ceads.net.cn/data/province/by_apparent_accounting/
+表观碳排放清单_1997-2022.xlsx
+
+
+https://data.stats.gov.cn/dg/website/page.html#/pc/national/yearData
+总人口_2001-2025.xlsx
+三次产业构成_2001-2025.xlsx国内生产总值指数 (1978年=100)_2001-2025.xlsx国内生产总值_2001-2025.xlsx按登记注册类型分规模以上工业企业经济指标_企业单位数_2006-2022.xlsx按登记注册统计类别分规模以上工业企业经济指标_企业单位数_2023-2024.xlsx
+能源产品产量_2006-2025.xlsx工业污染治理投资_2006-2025.xlsx环境污染治理投资_2006-2025.xlsx一次能源生产总量_2006-2025.xlsx能源消费总量_2006-2025.xlsx
+按登记注册统计类别分规模以上工业企业有效发明专利数 (2023-)_2023-2024.xlsx按登记注册类型分规模以上工业企业有效发明专利数 (-2022)_2006-2022.xlsx科学研究与开发机构基本情况_2006-2025.xlsx科技活动基本情况_2006-2025.xlsx
+
+
+https://www.stats.gov.cn/sj/ndsj/2025/indexch.htm（中国统计年鉴）
+人口构成情况.jpg
+人口构成情况_1949-2024.xlsx
+
+
+http://www.caep.org.cn/sy/hjfxyshjdpgyjzx/zxdt_21732/202412/W020241211365419718506.pdf
+生态环境经济核算报告（2004–2022）.pdf
